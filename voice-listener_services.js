@@ -22,7 +22,7 @@ document.getElementById("startListening").addEventListener("click", () => {
       if (transcript.toLowerCase().includes("sss")) {
         window.location.href = "sss.html"; // To be created later
       } else if (transcript.toLowerCase().includes("pag-ibig")) {
-        window.location.href = "pagibig.html"; // To be created later
+        window.location.href = "pagIbig.html"; // To be created later
       } else if (transcript.toLowerCase().includes("philhealth")) {
         window.location.href = "philhealth.html"; // To be created later
       }else if (transcript.toLowerCase().includes("back") || transcript.toLowerCase().includes("exit") || transcript.toLowerCase().includes("tapusin") || transcript.toLowerCase().includes("bumalik")) {
@@ -63,4 +63,5 @@ function startVoiceInput(fieldId) {
 
   recognition.start();
 }
+
 
