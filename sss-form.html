@@ -5,33 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SSS Application Form</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+  
+  .form-container {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    width: 350px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+  }
+  input {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background: #3b82f6;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn:hover {
+    background: #2563eb;
+  }
+  .vbtn {
+    padding: 0.75rem 0.5rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background: #3b82f6 !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    transition: background 0.3s !important;
+  }
+  .vbtn:hover {
+    background: #2563eb !important;
+  }
+</style>
 </head>
 <body>
   <div class="container">
-    <h2>Submit Application Form</h2>
+    <h2>Submit SSS Application</h2>
     <form id="sssForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
-          <input type="text" id="name" name="name" required />
-          <button type="button" onclick="startVoiceInput('name')">🎤</button>
+      <div class="form-container">
+        
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your full name">
+          <button type="button" class="vbtn" onclick="startVoiceInput('name')">🎤</button>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
-          <input type="email" id="email" name="email" required />
-          <button type="button" onclick="startVoiceInput('email')">🎤</button>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+          <button type="button" class="vbtn" onclick="startVoiceInput('email')">🎤</button>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="sssNumber">SSS Number</label>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
-          <input type="text" id="sssNumber" name="sssNumber" required />
-          <button type="button" onclick="startVoiceInput('sssNumber')">🎤</button>
+
+        <div class="form-group">
+          <label for="sss">SSS Number</label>
+          <input type="text" id="sssNumber" name="sssNumber" required placeholder="Enter your SSS number">
+          <button type="button" class="vbtn" onclick="startVoiceInput('sssNumber')">🎤</button>
         </div>
+
+        <button class="btn" id="voiceBtn">Submit</button>
       </div>
-      <button type="submit" id="voiceBtn">Submit</button>
     </form>
 
     <div id="result" style="display: none; margin-top: 2rem;">
@@ -47,7 +107,9 @@
     </div>
 
     <div class="back">
-      <a href="sss.html">&larr; Back to SSS Info</a>
+      <!-- <a href="sss.html">&larr; Back to SSS Info</a> -->
+       <button class="backBtn" onclick="window.location.href='sss.html'">Back</button>
+       <button class="cancelBtn"  onclick="window.location.href='index.html'">Cancel</button>
     </div>
   </div>
 
